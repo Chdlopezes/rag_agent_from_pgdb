@@ -1,0 +1,11 @@
+# --- LangChain v1: agent + retrieval middleware ---
+langchain>=1.0            # create_agent, AgentMiddleware, AgentState
+langchain-core>=1.0       # Document
+langchain-openai>=1.0     # ChatOpenAI, OpenAIEmbeddings
+langchain-postgres>=0.0.14  # PGVector store
+
+# --- PostgreSQL / pgvector driver (psycopg 3) ---
+psycopg[binary]>=3.1      # postgresql+psycopg:// connection
+
+# --- Environment variables from .env ---
+python-dotenv>=1.0        # load_dotenv()

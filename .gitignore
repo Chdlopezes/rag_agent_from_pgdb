@@ -1,0 +1,11 @@
+# Dotfiles / dot-directories (.vscode, .idea, .venv, etc.)
+.*
+!.gitignore
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Downloaded files (keep the directory, ignore its sensitive contents)
+downloaded_files/*
+!downloaded_files/.gitkeep
