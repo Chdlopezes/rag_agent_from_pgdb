@@ -5,7 +5,7 @@ from langchain_core.documents import Document
 from langchain_openai import ChatOpenAI
 from typing import Any
 from langchain.agents.middleware import AgentMiddleware, AgentState, SummarizationMiddleware
-from connectors import get_pgvector_store
+from two_step_rag.connectors import get_pgvector_store
 from langgraph.checkpoint.memory import InMemorySaver
 from langchain_core.runnables import RunnableConfig
 
@@ -14,7 +14,7 @@ load_dotenv()
 
 class State(AgentState):
     client: str
-    context: list[Document]
+    sources: list[Document]
 
 
 def get_vector_store(client: str):
@@ -48,7 +48,7 @@ class RetrieveDocumentsMiddleware(AgentMiddleware[State]):
             "messages": [
                 last_message.model_copy(update={"content": augmented_message_content})
             ],
-            "context": retrieved_docs,
+            "sources": retrieved_docs,
         }
 
 

@@ -1,3 +1,6 @@
+# --- Deep agents: create_deep_agent, backends, skills ---
+deepagents>=0.6.12        # CompositeBackend route prefixes + FilesystemBackend virtual_mode
+
 # --- LangChain v1: agent + retrieval middleware ---
 langchain>=1.0            # create_agent, AgentMiddleware, AgentState
 langchain-core>=1.0       # Document
@@ -9,3 +12,6 @@ psycopg[binary]>=3.1      # postgresql+psycopg:// connection
 
 # --- Environment variables from .env ---
 python-dotenv>=1.0        # load_dotenv()
+
+# --- LangGraph CLI: local dev server (`langgraph dev`) ---
+langgraph-cli[inmem]      # inmem extra enables the in-memory dev server
